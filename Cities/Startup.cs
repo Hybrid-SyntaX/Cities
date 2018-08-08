@@ -27,6 +27,7 @@ namespace Cities
 
             services.AddDbContext<CitiesDbContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("Default")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
