@@ -23,16 +23,7 @@ namespace Cities.Persistence
         /// <param name="options"></param>
         public CitiesDbContext(DbContextOptions options) : base(options)
         {
-            if (Cities?.Count() == 0)
-            {
-                Cities.AddRange(new City[]{
-                    new City { Name = "Tehran" },
-                    new City { Name = "Isfahan" },
-                    new City { Name = "Shiraz" },
-                    new City { Name = "Tabriz" },
-                });
-                this.SaveChanges();
-            }
+
         }
     }
 }
