@@ -21,5 +21,6 @@ namespace Cities.Models
         /// City Name
         /// </summary>
         public string Name { set; get; }
+
     }
 }
