@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cities.Persistence;
+using Cities.Persistence.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,8 +26,11 @@ namespace Cities
         {
             services.AddMvc();
 
+            
             services.AddDbContext<CitiesDbContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("Default")));
+            
+            services.AddTransient<ICityRepository, CityRepository>();
 
         }
 
